@@ -19,4 +19,5 @@
 ## 관련링크
 ---
 * Flower Care : <https://github.com/vrachieru/xiaomi-flower-care-api>
+* My youtube : https://youtu.be/8haDQaKoPL4
 
