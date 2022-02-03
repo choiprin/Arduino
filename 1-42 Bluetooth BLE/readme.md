@@ -5,5 +5,8 @@
 ---
 1. ESP32 DEVKIT V1  2개
 
+## 유튜브 링크
+* youtube : <https://youtu.be/RcMTeeI4SKA>
+
 
 
