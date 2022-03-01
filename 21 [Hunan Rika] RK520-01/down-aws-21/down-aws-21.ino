@@ -26,8 +26,8 @@ WebSocketsServer webSocket = WebSocketsServer(81);
 int type=21; // 기기 인식번호 -> display에 사용
 #define URL_fw_Bin "http://i2r.link/download/"
 
-char ssid[40] = "mecha1203";
-char password[50] = "mecha1203";
+char ssid[40] = "";
+char password[50] = "";
 IPAddress apIP(192, 168, 4, 1);
 IPAddress netMsk(255, 255, 255, 0);
 
