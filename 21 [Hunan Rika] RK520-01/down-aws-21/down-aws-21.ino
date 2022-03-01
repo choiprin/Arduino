@@ -37,7 +37,7 @@ unsigned int countMqtt=0;
 unsigned int countMeasure=0;
 
 const char *clientName = "";          // 사물 이름 (thing ID) 자동생성
-const char *host = "a35y3l4o97ieag-ats.iot.us-east-2.amazonaws.com"; // AWS IoT Core 주소
+const char *host = "**************.amazonaws.com"; // AWS IoT Core 주소
 const char* outTopic = "/i2r/outTopic"; 
 const char* inTopic = "/i2r/inTopic"; 
 
