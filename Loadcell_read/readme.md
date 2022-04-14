@@ -9,5 +9,5 @@
 * 로드셀이 출력하는 전압은 1000uV로 미세한 양의 전압
 * 정밀한 측정을 위해 HX711(증폭기)를 사용해서 측정  
 
-###시리얼 모니터
+### 시리얼 모니터
 ![Loadcell시리얼모니터](https://user-images.githubusercontent.com/98401825/163298294-e97f2b77-edc5-4ba0-a619-0a797fd27e92.png)  
