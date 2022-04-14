@@ -9,6 +9,7 @@
 * 아무것도 올리지 않았을 때  
 ![Loadcell_10개평균값모니터1](https://user-images.githubusercontent.com/98401825/163301433-3a8346f7-b6ff-4d41-aa0b-6788d6245336.png)  
 
-* 물통 올려뒀을 때
+
+* 물통 올려뒀을 때  
 ![Loadcell_10개평균값모니터2](https://user-images.githubusercontent.com/98401825/163301535-c3b4b767-4ebf-4907-9c6c-88fcc9a20116.png)
 
