@@ -1,7 +1,7 @@
 # [Delta] VFD_M 인버터 제어
 ![Arduino+VFD인버터-001](https://user-images.githubusercontent.com/98401825/169675229-c581c743-e5a9-4889-a1e8-ef32160bacc6.png)
 
-### *VFD_M 인버터 파라미터 설정  
+### VFD_M 인버터 파라미터 설정  
 ![VFD_M인버터 메뉴얼캡쳐](https://user-images.githubusercontent.com/98401825/169675482-ae5ca6de-cd8d-4f58-bd19-8c665a3e0840.jpg)
 
   
