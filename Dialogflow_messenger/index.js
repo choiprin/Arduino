@@ -9,7 +9,7 @@ const {Card, Suggestion} = require('dialogflow-fulfillment');
 
 admin.initializeApp({
   credential: admin.credential.applicationDefault(),
-  databaseURL:'ws://plc-fvdx-default-rtdb.firebaseio.com/'
+  databaseURL:'ws://plc-fasx-default-rtdb.firebaseio.com/' // change here to your "firebase url"
 });
  
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
