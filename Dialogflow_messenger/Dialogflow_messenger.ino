@@ -3,10 +3,10 @@
 #include <ESP8266WiFi.h>
 #include <SoftwareSerial.h>
 #include "CRC.h"
-#define FIREBASE_HOST "test-cxug-default-rtdb.firebaseio.com/" //Without http:// or https:// schemes
-#define FIREBASE_AUTH "HwdBN7kx1yel3jxEEP3ss0jw8DZaf1ksQeqcWMlg"
-#define WIFI_SSID "SK_WiFiGIGA2890"
-#define WIFI_PASSWORD "2011084109"
+#define FIREBASE_HOST " input firebase url" //Without http:// or https:// schemes
+#define FIREBASE_AUTH " input your firebase auth "
+#define WIFI_SSID " input ssid "
+#define WIFI_PASSWORD " input pw"
 
 //Define FirebaseESP8266 data object
 FirebaseData firebaseData1;
