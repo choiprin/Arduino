@@ -7,7 +7,8 @@
 4. Quick setup 란에서 'Name your Smart Home action' 클릭
 5. __Develop) Invocation__ 에서 Display Name 입력( Google Home 앱에 등록될 이름 )
 6. __Develop) Actions__ 에서 Fullfilment URL을 입력
-    https://us-central1-<project-id\>.cloudfunctions.net/smarthome   ( <project-id> 에 현재 프로젝트 id 입력 )
+    https://us-central1-<project-id\>.cloudfunctions.net/smarthome  
+    ( <project-id> 에 현재 프로젝트 id 입력 )
 6. __Develop > Account linking__ 에서 다음과 같이 입력한다.     
 Client ID               : ABC123    
 Client secret           : DEF456    
