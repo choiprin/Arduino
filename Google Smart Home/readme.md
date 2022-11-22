@@ -27,7 +27,7 @@ Client secret           : DEF456
 12. 다운받은 JSON키 파일 이름을 "smart-home-key.json"로 변경
  
 ### 제어프로그램 작성과 업로드
-1. 현재 github에 업로드 되어있는 
+1. 현재 github에 업로드 되어있는 Google Smart Home/firebase/functions 
 2. 다음 디렉토리로 이동 google-actions-smarthome-master\smarthome-control\functions 
 3. console창에서 다음을 순서대로 실행한다.      
 firebase login      
