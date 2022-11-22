@@ -27,6 +27,7 @@ Client secret           : DEF456
 12. 다운받은 JSON키 파일 이름을 "smart-home-key.json"로 변경
  
 ### *Firebase Deploy*
+***
 1. 현재 github에 업로드 되어있는 폴더를 다운  
 2. 각자 저장한 경로에 맞게 Google Smart Home/firebase/functions 로 이동 후 cmd 실행  
 3. 다음을 순서대로 실행  
