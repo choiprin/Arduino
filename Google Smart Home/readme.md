@@ -1,5 +1,4 @@
-## 스마트홈 (Google Actio Smart Home) 만들기    
-### Action Google과 Google Cloud 설정  
+## 스마트홈 (Google Actio Smart Home) 만들기  
 ### *Action google*  
 ***
 1. [Actions on Google Console](https://console.actions.google.com/ "Action Google")
@@ -17,7 +16,8 @@ Client secret           : DEF456
     Authorization URL       : https://us-central1-<project-id\>.cloudfunctions.net/fakeauth      
     Token URL               : https://us-central1-<project-id\>.cloudfunctions.net/faketoken  
     테스트 용도기 때문에 default 값들을 사용함  
-### Google Cloud Platform  
+### *Google Cloud Platform*  
+***
 8. [Google 클라우드 플랫폼](https://console.cloud.google.com/)으로 이동  
 9. "__Google Cloud Platform__"에서 생성했던 프로젝트를 선택
 10. "__APIs & Services > Library__" 에서 "HomeGraph API"을 검색 후 설치( enable )      
