@@ -24,7 +24,7 @@ Client secret           : DEF456
 "__APIs & Services > Credentials__" 에서 Create Credentials 버튼 클릭, Service account 클릭 
 10. 임의로 이름을 지정 후 생성된 Service Accounts 찾아서 클릭  
 11. __Keys > Add Key > Create New Key > JSON__ JSON키 생성 
-12. 다운받은 JSON키 파일 이름을 "smart-home-key.json"을 바꾼다.
+12. 다운받은 JSON키 파일 이름을 "smart-home-key.json"로 변경
  
 ### 제어프로그램 작성과 업로드
 1. 참조사이트 https://github.com/shivasiddharth/google-actions-smarthome 에서 "Code"를 선택해 소스프로그램을 내려받고 압축을 푼다.
