@@ -27,20 +27,17 @@ Client secret           : DEF456
 12. 다운받은 JSON키 파일 이름을 "smart-home-key.json"로 변경
  
 ### 제어프로그램 작성과 업로드
-1. 현재 github에 업로드 되어있는 Google Smart Home/firebase/functions 
-2. 다음 디렉토리로 이동 google-actions-smarthome-master\smarthome-control\functions 
-3. console창에서 다음을 순서대로 실행한다.      
-firebase login      
-firebase use \<project-id\>       
-npm install     
-firebase deploy
-*** npm과 firebse가 실행되지 않으면 이를 설치하세요 https://www.youtube.com/watch?v=uBZ78C--T6U
+1. 현재 github에 업로드 되어있는 폴더를 다운  
+2. 각자 저장한 경로에 맞게 Google Smart Home/firebase/functions 로 이동 후 cmd 실행  
+3. 다음을 순서대로 실행      
+npm install -g firebase-tools  
+npm install  
+firebase login  
+firebase projects:list  
+위 명령어까지 실행하면 리스트들이 나옴. 원하는 리스트를 확인 후  
+firebase use project-id __project-id 대신 해당하는 id 입력__  
+다시 firebase projects:list 해보면 설정된 프로젝트의 색이 변함  
+firebase deploy  
+deploy단계에서 에러가 발생하면 해당 디렉토리의 package.json Node버전을 10으로 변경  
 
-4. 다음 URL로 접속한다.     
-https://us-central1-\<project-id\>.cloudfunctions.net/smarthome
-5. Google Home을 시작한다.
-
-
-Google Smart Home 문서 : 기기들 상세 프로그램을 하려면 참조하세요 https://developers.google.cn/assistant/smarthome/overview
-
-참조유튜브 : https://www.youtube.com/watch?v=e1C5WIfZ89s
+Google Home Document  :  https://developers.google.cn/assistant/smarthome/overview
