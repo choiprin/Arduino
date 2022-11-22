@@ -50,5 +50,9 @@ firebase projects:list
 firebase deploy
 ```
 deploy단계에서 에러가 발생하면 해당 디렉토리의 package.json Node버전을 10으로 변경  
-
+```
+  "engines": {
+    "node": "10"
+  }
+```
 Google Home Document  :  https://developers.google.cn/assistant/smarthome/overview
