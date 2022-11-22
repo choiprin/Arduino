@@ -9,16 +9,19 @@
 6. __Develop) Actions__ 에서 Fullfilment URL을 입력
     https://us-central1-<project-id\>.cloudfunctions.net/smarthome  
     ( project-id 에 현재 프로젝트 id 입력 ex)https://us-central1-test-12345.cloudfunctions.net/smarthome )
-6. __Develop > Account linking__ 에서 다음과 같이 입력한다.     
+7. __Develop) Account linking__ 에서 다음과 같이 입력     
 Client ID               : ABC123    
 Client secret           : DEF456    
     Authorization URL       : https://us-central1-<project-id\>.cloudfunctions.net/fakeauth      
-    Token URL               : https://us-central1-<project-id\>.cloudfunctions.net/faketoken      
-7. [Google 클라우드 플랫폼](https://console.cloud.google.com/)으로 이동한다.
-8. 상단의 메뉴 "__Google Cloud Platform__"에서 해당 프로젝트를 선택한다.
-9. HomeGraph API 설치 : 햄버거 아니콘을 선택해 "__API 및 서비스 > 대시보드 > API 및 서비스 사용 설정__"을 선택하고 검색창에 "Home"을 입력하여 "HomeGraph API"를 선택해서 설치한다.      
-"__API 및 서비스 HomeGraph API > 사용자 인증 정보 > 사용자 인증 정보 만들기 > 서비스 계정 > 서비스 계정 세부정보__" 에 "MyTestApp"라고 입력한다. 이는 다른 한글 이름을 넣어도 된다. 그 아래의 서비스 계정 설명에는 이를 설명하는 문구를 넣고 "만들기"를 선택한다.
-10. __역할선택 > 서비스계정 > 서비스 계정 토큰 생성자 > 계속 > 키생성 > json__ 을 선택하고 파일을 저장한 후에 파일 이름을 "smart-home-key.json"을 바꾼다.
+    Token URL               : https://us-central1-<project-id\>.cloudfunctions.net/faketoken  
+    테스트 용도기 때문에 default 값들을 사용함
+8. [Google 클라우드 플랫폼](https://console.cloud.google.com/)으로 이동
+9. "__Google Cloud Platform__"에서 생성했던 프로젝트를 선택
+10. "__APIs & Services > Library__" 에서 "HomeGraph API"을 검색 후 설치( enable )      
+"__APIs & Services > Credentials__" 에서 Create Credentials 버튼 클릭, Service account 클릭 
+10. 임의로 이름을 지정 후 생성된 Service Accounts 찾아서 클릭  
+11. __Keys > Add Key > Create New Key > JSON__ JSON키 생성 
+12. 다운받은 JSON키 파일 이름을 "smart-home-key.json"을 바꾼다.
  
 ### 제어프로그램 작성과 업로드
 1. 참조사이트 https://github.com/shivasiddharth/google-actions-smarthome 에서 "Code"를 선택해 소스프로그램을 내려받고 압축을 푼다.
