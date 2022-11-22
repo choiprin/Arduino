@@ -1,6 +1,6 @@
 ## 스마트홈 (Google Actio Smart Home) 만들기    
 ### Action Google과 Google Cloud 설정  
-### Action google  
+### **Action google**  
 1. [Actions on Google Console](https://console.actions.google.com/ "Action Google")
 로 이동
 2. 새 프로젝트를 생성( 언어 - Korean, 지역 - South Korea )
