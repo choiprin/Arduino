@@ -28,17 +28,175 @@ MAC 주소값을 얻는 방법은 다음과 같습니다.
 
 + 쉽게 테스트해보실 수 있도록 처음에는 가상 MAC 주소 **12345678** 로 설정해주시면 됩니다. 제품이 없어도 테스트는 가능합니다. MQTT 서버 통신 특성상 다른 사람이 페이로드를 같은 서버에 보낼 수 있어 관련 부분은 추후 버전에서 개선될 예정입니다.
 
-Node-RED 에서 실습해보실 수 있는 예제 코드입니다. 
-첫번째 코드는 Inject 노드를 통해 스케쥴과 원하는 제어 내용을 전달하는 내용입니다.
+### *Node-red Flow*
+***
+Node-red 에서 실습해보실 수 있는 예제 코드입니다.  
+__1.스케쥴 값을 외부에서 입력__
 
 
 ~~~ 
 [
     {
-        "id": "33a4af9d512f8b88",
+        "id": "0a7b81134c60823b",
+        "type": "tab",
+        "label": "플로우 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6e29702fad515c3b",
+        "type": "mqtt in",
+        "z": "0a7b81134c60823b",
+        "name": "",
+        "topic": "LightTalk-inTest",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee14e4e972247982",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "8735c42b592d19fb"
+            ]
+        ]
+    },
+    {
+        "id": "c2b488f94fd35085",
+        "type": "debug",
+        "z": "0a7b81134c60823b",
+        "name": "debug 41",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "6c051238efeffd7e",
+        "type": "debug",
+        "z": "0a7b81134c60823b",
+        "name": "debug 42",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4499a6b698c04f49",
+        "type": "debug",
+        "z": "0a7b81134c60823b",
+        "name": "debug 43",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0906124032c587a9",
+        "type": "debug",
+        "z": "0a7b81134c60823b",
+        "name": "debug 44",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8735c42b592d19fb",
+        "type": "debug",
+        "z": "0a7b81134c60823b",
+        "name": "debug 45",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "testing",
+        "type": "라이트토크",
+        "z": "0a7b81134c60823b",
+        "name": "",
+        "startTime": "2022-11-21T15:44",
+        "endTime": "2022-11-21T15:45",
+        "heat": true,
+        "cool": false,
+        "exha": "",
+        "led": "",
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "c2b488f94fd35085"
+            ],
+            [
+                "6c051238efeffd7e"
+            ],
+            [
+                "4499a6b698c04f49"
+            ],
+            [
+                "0906124032c587a9"
+            ]
+        ]
+    },
+    {
+        "id": "0d7da38cdc3a034f",
+        "type": "function",
+        "z": "0a7b81134c60823b",
+        "name": "function 19",
+        "func": "msg.payload=\n{ \"start_time\" : \"2022-11-21 15:35\", \n    \"end_time\": \"2022-11-21 15:36\", \n\"outNo\" : 2, \"value\" : 1 };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "testing"
+            ]
+        ]
+    },
+    {
+        "id": "39a7d86e55da9c09",
         "type": "inject",
-        "z": "b092e6dcb774259c",
-        "name": "command (light off)",
+        "z": "0a7b81134c60823b",
+        "name": "",
         "props": [
             {
                 "p": "payload"
@@ -53,370 +211,235 @@ Node-RED 에서 실습해보실 수 있는 예제 코드입니다.
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"mac\":\"048e741c5210\",\"type\":100,\"outNo\":2,\"value\":1}",
-        "payloadType": "str",
-        "x": 221.2812042236328,
-        "y": 373.9713878631592,
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 120,
         "wires": [
             [
-                "12345678"
+                "0d7da38cdc3a034f"
             ]
         ]
     },
     {
-        "id": "12345678",
-        "type": "라이트토크",
-        "z": "b092e6dcb774259c",
-        "name": "라이트토크",
-        "startTime": "2022/03/30,19:25:30",
-        "endTime": "2022/03/30,19:25:35",
-        "x": 460.29290771484375,
-        "y": 425.87894582748413,
-        "wires": [
-            [
-                "60538344815ebbcf"
-            ],
-            [
-                "d8bfeda96646b863"
-            ],
-            [
-                "d235d30a10910cf7"
-            ],
-            [
-                "6d82ed872131d9bc"
-            ]
-        ]
-    },
-    {
-        "id": "60538344815ebbcf",
-        "type": "ui_led",
-        "z": "b092e6dcb774259c",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "1",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "",
-        "x": 701.2840595245361,
-        "y": 345.87072372436523,
+        "id": "da019fc40b47b78c",
+        "type": "comment",
+        "z": "0a7b81134c60823b",
+        "name": "with Inject",
+        "info": "",
+        "x": 100,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "d8bfeda96646b863",
-        "type": "ui_led",
-        "z": "b092e6dcb774259c",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "2",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
+        "id": "ee14e4e972247982",
+        "type": "mqtt-broker",
         "name": "",
-        "x": 708.0142288208008,
-        "y": 386.00567626953125,
-        "wires": []
-    },
-    {
-        "id": "d235d30a10910cf7",
-        "type": "ui_led",
-        "z": "b092e6dcb774259c",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "3",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "",
-        "x": 709.014217376709,
-        "y": 432.00567626953125,
-        "wires": []
-    },
-    {
-        "id": "6d82ed872131d9bc",
-        "type": "ui_led",
-        "z": "b092e6dcb774259c",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "4",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "",
-        "x": 698.014238357544,
-        "y": 481.00563049316406,
-        "wires": []
-    },
-    {
-        "id": "e036ccde72136820",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "52fedc0fc5facd8a",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "52fedc0fc5facd8a",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
+        "broker": "mqtt://broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
     }
 ]
 ~~~
 
 
-두번째 예제코드는 Inject 노드를 통해 스케쥴을 전달하지 않고 노드 설정을 함으로써 스케쥴을 만들고 그에 맞게 동작하게 하는 예제입니다.  
+__2.스케쥴 값을 노드 안에서 입력__  
 
 
 ~~~
 [
     {
-        "id": "6807ec82773a08f7",
+        "id": "a1b02921f2ac9763",
         "type": "tab",
-        "label": "플로우 3",
+        "label": "플로우 2",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "12345678",
+        "id": "1d46afd3f81c9904",
+        "type": "debug",
+        "z": "a1b02921f2ac9763",
+        "name": "debug 46",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "bd8ffb173c4bbdec",
+        "type": "debug",
+        "z": "a1b02921f2ac9763",
+        "name": "debug 47",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7e11355f8c6b66b5",
+        "type": "debug",
+        "z": "a1b02921f2ac9763",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "11c55b13233638b9",
+        "type": "debug",
+        "z": "a1b02921f2ac9763",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "testing",
         "type": "라이트토크",
-        "z": "6807ec82773a08f7",
-        "name": "라이트토크",
-        "startTime": "2022-10-10T15:02",
-        "endTime": "2022-10-10T15:08",
+        "z": "a1b02921f2ac9763",
+        "name": "",
+        "startTime": "2022-11-23T11:13",
+        "endTime": "2022-11-23T11:15",
         "heat": true,
         "cool": false,
-        "exha": true,
-        "led": false,
-        "x": 388.01171875,
-        "y": 232.90757751464844,
+        "exha": "",
+        "led": "",
+        "x": 90,
+        "y": 140,
         "wires": [
             [
-                "dee4df165715aeb4"
+                "1d46afd3f81c9904"
             ],
             [
-                "1d99373459c81d7b"
+                "bd8ffb173c4bbdec"
             ],
             [
-                "79fd4d30c6bdea8a"
+                "7e11355f8c6b66b5"
             ],
             [
-                "522419f8e775b44e"
+                "11c55b13233638b9"
             ]
         ]
     },
     {
-        "id": "1d99373459c81d7b",
-        "type": "ui_led",
-        "z": "6807ec82773a08f7",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "2",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
+        "id": "5889a7a80f047c26",
+        "type": "mqtt in",
+        "z": "a1b02921f2ac9763",
         "name": "",
-        "x": 635.733039855957,
-        "y": 193.03430795669556,
+        "topic": "LightTalk-inTest",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee14e4e972247982",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "4d592988126f9042"
+            ]
+        ]
+    },
+    {
+        "id": "4d592988126f9042",
+        "type": "debug",
+        "z": "a1b02921f2ac9763",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 260,
         "wires": []
     },
     {
-        "id": "79fd4d30c6bdea8a",
-        "type": "ui_led",
-        "z": "6807ec82773a08f7",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "3",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "",
-        "x": 636.7330284118652,
-        "y": 239.03430795669556,
+        "id": "87bb5d3b6bc07c93",
+        "type": "comment",
+        "z": "a1b02921f2ac9763",
+        "name": "without Inject",
+        "info": "",
+        "x": 90,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "522419f8e775b44e",
-        "type": "ui_led",
-        "z": "6807ec82773a08f7",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "4",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
+        "id": "ee14e4e972247982",
+        "type": "mqtt-broker",
         "name": "",
-        "x": 625.7330493927002,
-        "y": 288.03426218032837,
-        "wires": []
-    },
-    {
-        "id": "dee4df165715aeb4",
-        "type": "ui_led",
-        "z": "6807ec82773a08f7",
-        "order": 0,
-        "group": "e036ccde72136820",
-        "width": 0,
-        "height": 0,
-        "label": "1",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "0",
-                "valueType": "num"
-            },
-            {
-                "color": "#008000",
-                "value": "1",
-                "valueType": "num"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "",
-        "x": 639,
-        "y": 145,
-        "wires": []
-    },
-    {
-        "id": "e036ccde72136820",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "52fedc0fc5facd8a",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "52fedc0fc5facd8a",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
+        "broker": "mqtt://broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
     }
 ]
 ~~~
