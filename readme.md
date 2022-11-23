@@ -31,7 +31,9 @@ MAC 주소값을 얻는 방법은 다음과 같습니다.
 ### *Node-red Flow*
 ***
 Node-red 에서 실습해보실 수 있는 예제 코드입니다.  
-__1.스케쥴 값을 외부에서 입력__
+__*1.스케쥴 값을 외부에서 입력*__
+
+![image](https://user-images.githubusercontent.com/98401825/203458261-84b4e6de-3c79-4318-9110-b68284a54db3.png)
 
 
 ~~~ 
@@ -262,8 +264,9 @@ __1.스케쥴 값을 외부에서 입력__
 ~~~
 
 
-__2.스케쥴 값을 노드 안에서 입력__  
+__*2.스케쥴 값을 노드 안에서 입력*__  
 
+![image](https://user-images.githubusercontent.com/98401825/203458336-e3fd5d23-46a9-46f3-84af-3e7c2caf90a4.png)
 
 ~~~
 [
