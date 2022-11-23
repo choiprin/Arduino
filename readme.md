@@ -5,7 +5,7 @@
 ![image](https://user-images.githubusercontent.com/100942304/194800638-2018ee24-9028-4f96-8f1d-086cc19256d1.png)
 
 
-## Mac address
+### *Mac address*
 ***
 위의 사진의 칸에 MAC 주소값을 넣어 주시면 됩니다.
 
